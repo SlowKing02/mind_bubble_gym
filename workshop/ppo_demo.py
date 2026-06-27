@@ -16,6 +16,7 @@ from pathlib import Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="CartPole PPO comparator")
+    parser.add_argument("--env", default="CartPole-v1", help="Gymnasium env id")
     parser.add_argument("--timesteps", type=int, default=50_000)
     parser.add_argument("--out", type=Path, default=Path("output/cartpole_ppo"))
     args = parser.parse_args()
@@ -29,13 +30,15 @@ def main() -> None:
             "Install optional deps: pip install 'stable-baselines3[extra]>=2.3'"
         ) from exc
 
+    slug = args.env.replace("-", "_").lower()
+    args.out = args.out if args.out.name != "cartpole_ppo" else Path(f"output/{slug}_ppo")
     args.out.mkdir(parents=True, exist_ok=True)
-    env = gym.make("CartPole-v1")
+    env = gym.make(args.env)
     model = PPO("MlpPolicy", env, verbose=1)
     model.learn(total_timesteps=args.timesteps)
     mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=20)
-    model.save(args.out / "ppo_cartpole")
-    print(f"PPO eval: {mean_reward:.1f} +/- {std_reward:.1f} over 20 episodes")
+    model.save(args.out / f"ppo_{slug}")
+    print(f"PPO on {args.env}: {mean_reward:.1f} +/- {std_reward:.1f} (20 eval episodes)")
     env.close()
 
 

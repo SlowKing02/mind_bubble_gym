@@ -1,7 +1,7 @@
-gymnasium[classic-control]>=0.29
+gymnasium[classic-control,box2d,toy-text]>=0.29
 numpy>=1.24
 matplotlib>=3.7
 tensorflow>=2.13
-
-# Optional modern comparator (see workshop/ppo_demo.py):
-# stable-baselines3[extra]>=2.3
+jupyter>=1.0
+ipykernel>=6.29
+stable-baselines3[extra]>=2.3

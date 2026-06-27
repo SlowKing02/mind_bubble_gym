@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="Reinforcement learning loop">
+  <rect width="720" height="220" fill="#faf8f4"/>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#222C38"/>
+    </marker>
+  </defs>
+  <rect x="24" y="70" width="120" height="64" rx="12" fill="#e8f0ea" stroke="#5a7a62"/>
+  <text x="84" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" fill="#222C38">Agent</text>
+  <rect x="200" y="70" width="140" height="64" rx="12" fill="#eef1f5" stroke="#222C38"/>
+  <text x="270" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" fill="#222C38">Environment</text>
+  <rect x="396" y="24" width="120" height="52" rx="10" fill="#f5efe6" stroke="#9a7b4f"/>
+  <text x="456" y="56" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#222C38">State</text>
+  <rect x="396" y="128" width="120" height="52" rx="10" fill="#f5efe6" stroke="#9a7b4f"/>
+  <text x="456" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#222C38">Reward</text>
+  <line x1="144" y1="90" x2="200" y2="90" stroke="#222C38" marker-end="url(#arrow)"/>
+  <text x="172" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#555">action</text>
+  <line x1="270" y1="134" x2="456" y2="50" stroke="#222C38" marker-end="url(#arrow)"/>
+  <line x1="270" y1="134" x2="456" y2="154" stroke="#222C38" marker-end="url(#arrow)"/>
+  <line x1="396" y1="50" x2="144" y2="114" stroke="#222C38" marker-end="url(#arrow)"/>
+  <line x1="396" y1="154" x2="144" y2="114" stroke="#222C38" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="360" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#666">Try ’ observe ’ score ’ improve ’ repeat</text>
+</svg>
